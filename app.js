@@ -30,6 +30,7 @@ function delayStart() {
   setTimeout(function(){ playTrack($('#raven').get(0)) }, 100);
   setTimeout(function(){ playTrack($('#drums1').get(0)) }, 3000);
   setTimeout(function(){ playTrack($('#didgi1').get(0)) }, 10000);
+  setTimeout(function(){ playTrack($('#bass').get(0)) }, 7000);
   setTimeout(function(){ playTrack($('#didgi2').get(0)) }, 20000);
   setTimeout(function(){ playTrack($('#everything').get(0)) }, 30000);
 };
