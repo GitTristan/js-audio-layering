@@ -1,15 +1,20 @@
 $(document).ready(function() {
 
   $(".record").on("click", function() {
-    playTrack($('#drums1').get(0));
-    $('#stopwatch').timer('resume');
     if($(this).hasClass('rotate')) {
       $("#stopwatch").timer('pause');
-      pauseTrack($(audio));
+      $.each($('audio'), function(index, track) {
+        pauseTrack(track)
+      });
+      $(this).removeClass("rotate");
     }
-    $(this).toggleClass("rotate");
+    else {
+      playTrack($('#drums1').get(0));
+      $('#stopwatch').timer('resume');
+      $(this).addClass("rotate");
+    }
   })
-})
+});
 
 
 function playTrack(track) {
