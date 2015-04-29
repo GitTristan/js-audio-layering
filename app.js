@@ -1,7 +1,21 @@
 $(document).ready(function() {
-  $digi1 = document.getElementById("didgi4");
 
   $(".record").on("click", function() {
-    $('#stopwatch').timer();
+    playTrack($('#drums1').get(0));
+    $('#stopwatch').timer('resume');
+    if($(this).hasClass('rotate')) {
+      $("#stopwatch").timer('pause');
+      pauseTrack($(audio));
+    }
+    $(this).toggleClass("rotate");
   })
 })
+
+
+function playTrack(track) {
+  track.play();
+};
+
+function pauseTrack(track) {
+  track.pause();
+};
