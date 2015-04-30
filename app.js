@@ -4,7 +4,7 @@ $(document).ready(function() {
     if($(this).hasClass('rotate')) {
       $("#stopwatch").timer('pause');
       $.each($('audio'), function(index, track) {
-        pauseTrack(track)
+        pauseTracks(track)
       });
       $(this).removeClass("rotate");
       clearTrack();
@@ -21,10 +21,9 @@ function playTrack(track) {
   track.play();
 };
 
-function pauseTrack(track) {
+function pauseTracks(track) {
   track.pause();
 };
-
 
 function delayStart() {
   setTimeout(function(){ playTrack($('#raven').get(0)) }, 100);
