@@ -3,9 +3,7 @@ $(document).ready(function() {
   $(".record").on("click", function() {
     if($(this).hasClass('rotate')) {
       $("#stopwatch").timer('pause');
-      $.each($('audio'), function(index, track) {
-        pauseTracks(track)
-      });
+      pauseTracks();
       $(this).removeClass("rotate");
       clearTrack();
     }
@@ -21,8 +19,10 @@ function playTrack(track) {
   track.play();
 };
 
-function pauseTracks(track) {
-  track.pause();
+function pauseTracks() {
+  $.each($('audio'), function(index, track) {
+    track.pause();
+  });
 };
 
 function delayStart() {
